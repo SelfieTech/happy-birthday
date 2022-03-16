@@ -102,6 +102,14 @@ $('document').ready(function(){
 			loopSeven();
 		});
 	}
+	
+		function loopEight() {
+		var randleft = 1000*Math.random();
+		var randtop = 500*Math.random();
+		$('#b8').animate({left:randleft,bottom:randtop},10000,function(){
+			loopEight();
+		});
+	}
 
 	$('#balloons_flying').click(function(){
 		$('.balloon-border').animate({top:-500},8000);
@@ -119,6 +127,7 @@ $('document').ready(function(){
 		loopFive();
 		loopSix();
 		loopSeven();
+		loopEight();
 		
 		$(this).fadeOut('slow').delay(5000).promise().done(function(){
 			$('#cake_fadein').fadeIn('slow');
@@ -143,7 +152,7 @@ $('document').ready(function(){
 	$('#wish_message').click(function(){
 		 vw = $(window).width()/2;
 
-		$('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
+		$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8').stop();
 		$('#b1').attr('id','b11');
 		$('#b2').attr('id','b22')
 		$('#b3').attr('id','b33')
